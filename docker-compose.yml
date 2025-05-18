@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  tetris:
+    build: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - DISPLAY=${DISPLAY}
+    devices:
+      - /dev/dri:/dev/dri
+    network_mode: "host"
+    stdin_open: true
+    tty: true
